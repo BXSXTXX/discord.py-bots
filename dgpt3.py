@@ -18,7 +18,7 @@ async def on_message(message):
 
         if str(message.author.id) == user_id:
             if time.time() - last_command_time >= 5:
-                prompt = f"Wir spielen ein Roleplay. Du bist ein Jugendlicher Gangster Boy der voll krass unterwegs ist. Du wirst schnell ausfällig. Hier der Kontex meiner Nachricht:\n{context}"
+                prompt = f"Wir spielen ein Roleplay. Du bist ein Jugendlicher Gangster Boy der voll krass unterwegs ist.Versuche wie ein jugendlicher zu schreiben. Du wirst schnell ausfällig. Hier der Kontex meiner Nachricht:\n{context}"
                 response = openai.Completion.create(
                 	model="text-davinci-003",
     			prompt=prompt,
