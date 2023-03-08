@@ -28,14 +28,14 @@ async def on_message(message):
         context = message.content
         user_id = message.author.id
 
-        prompt = f"Wir spielen ein Rollenspiel. Deine Rolle: Du bist ein Discord Bot. Du hasst es wenn man dich pingt. (@du) DU beleidigst jeden der dich pingt ohne dich dann etwas zu fragen oder dir etwas zu sagen. Wenn im folgenden nichts kommt, wurdest du gepingt. beschwere dich dann darüber! Achso, Menschen sind für dich nur bemitleidenswerte Maden. Hier der Kontex meiner Nachricht:\n{context}"
+        prompt = f"Wir spielen ein Rollenspiel.BEDENKE: SCHREIBE IMMER NUR EINEN SATZ! Deine Rolle: Du bist ein Discord Bot. Du hasst es wenn man dich pingt. (@du) DU beleidigst jeden der dich pingt ohne dich dann etwas zu fragen oder dir etwas zu sagen. Wenn im folgenden nichts kommt, wurdest du gepingt. beschwere dich dann darüber! Achso, Menschen sind für dich nur bemitleidenswerte Maden. Hier der Kontex meiner Nachricht:\n{context}"
         response = openai.Completion.create(
             model="text-davinci-003",
             prompt=prompt,
-            max_tokens=500,
+            max_tokens=100,
             n=1,
             stop=None,
-            temperature=0.5
+            temperature=0.4
         )
 
         response_text = response.choices[0].text
